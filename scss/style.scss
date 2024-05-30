@@ -1,0 +1,79 @@
+@import './blocks/nullstyle';
+
+@font-face {
+  font-family: Johnstown;
+  src: url('./fonts/JohnstownDemo.ttf');
+}
+
+@font-face {
+  font-family: 'Century Gothic bold';
+  src: url('./fonts/centurygothic_bold.ttf');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('./fonts/centurygothic.ttf');
+}
+
+@font-face {
+  font-family: Mistral;
+  src: url('./fonts/mistral.ttf');
+}
+
+body{
+  font-family: 'Century Gothic';
+  color: #fff;
+}
+
+.container{
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+header{
+  background-color: #334B35;
+  height: clamp(80px, 7.48vw, 110px);
+  display: flex;
+  align-items: center;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  & nav{
+    display: flex;
+    gap: 50px;
+  }
+}
+
+.nav-link{
+  position: relative;
+  &::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #F7C35F;
+    display: inline-block;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover{
+    &::after{
+      width: 100%;
+    }
+  }
+}
+
+.hero{
+  height: calc(100vh - clamp(80px, 7.48vw, 110px));
+  background-image: url('../images/img/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__wrap{
+    width: 730px;
+    font-family: Mistral;
+  }
+}
